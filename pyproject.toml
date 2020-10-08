@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "fatguys"
+version = "1.0.0"
+description = "Lazy Devs' game jam entry"
+authors = ["VisualDevelopment", "kb-1000"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pyglet = "^1.5.7"
+simpleflake = "^0.1.5"
+
+[tool.poetry.dev-dependencies]
+cx-freeze = { git = "https://github.com/marcelotduarte/cx_Freeze.git", rev = "master" }
+pylint = "^2.6.0"
+autopep8 = "^1.5.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
