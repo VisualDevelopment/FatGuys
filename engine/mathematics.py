@@ -26,3 +26,12 @@ class Vec2:
 
     def __repr__(self) -> str:
         return f"Vec2({self.x}, {self.y})"
+
+
+def clamp(a, b, c):
+    if a < b:
+        return b
+    elif a > c:
+        return c
+    else:
+        return a
