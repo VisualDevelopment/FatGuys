@@ -11,7 +11,7 @@ class Component:
         self.name = name
 
     def __repr__(self) -> str:
-        return f"<{__name__} '{self.id}' name={self.name}"
+        return f"<{Component.__name__} id='{self.id}' name='{self.name}'>"
 
 
 class Entity:
@@ -42,7 +42,7 @@ class Entity:
         return cls.eindex.get(eid)
 
     def __repr__(self) -> str:
-        return f"{__name__} '{self.id}' components={self.components}"
+        return f"<{Entity.__name__} id='{self.id}' components={self.components}>"
 
 
 class System:

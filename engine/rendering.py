@@ -23,7 +23,7 @@ class Sprite(entities.Entity):
         self.sprite.batch = sprite_batch
         self.update_translation(translation)
 
-    def update_translation(self, translation: Translation = Translation()):
+    def update_translation(self, translation: Translation = Translation()) -> None:
         self.set_or_add_component(translation)
         self.sprite.update(translation.position.x, translation.position.y)
 

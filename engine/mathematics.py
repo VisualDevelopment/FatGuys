@@ -23,3 +23,6 @@ class Vec2:
         other_y: Decimal = other if is_dec else other.y
 
         return Vec2(self.x - other_x, self.y - other_y)
+
+    def __repr__(self) -> str:
+        return f"Vec2({self.x}, {self.y})"

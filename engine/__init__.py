@@ -2,6 +2,7 @@ import engine.entities as entities
 import engine.rendering as rendering
 import engine.mathematics as mathematics
 import engine.snd_system as snd_system
+import engine.helpers as helpers
 
 __version__ = '1.0.0'
 
@@ -10,4 +11,5 @@ __all__ = [
     mathematics,
     rendering,
     snd_system,
+    helpers,
 ]
