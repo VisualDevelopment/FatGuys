@@ -58,6 +58,16 @@ def on_key_press(symbol: key, modifiers):
         game_over_label.update_translation(Translation("GameOver", Vec2(
             Decimal(window.width) / 2, Decimal(window.height) * 2)))
         time_since_last_cake = Decimal(0)
+        for cake, cake_position in zip(list(cakes), list(cake_positions)):
+            cakes.remove(cake)
+            cake_positions.remove(cake_position)
+            cake.sprite.visible = False
+            cake.sprite.delete()
+            cake.sprite = None
+        missed_label.text = "Missed: 0"
+        points_label.text = "Points: 0"
+        dude_position.x, dude_position.y = window.width // 2, fat_dude_image.height // 2
+        fat_dude.update_translation(Translation("Fat Guy", dude_position))
 
 
 @window.event
@@ -89,12 +99,12 @@ def update(dt: float):
             cakes.append(engine.rendering.Sprite(
                 pyglet.sprite.Sprite(cake_image), Translation("", position)))
 
-        if holding_keys.get(key.A):
+        if holding_keys.get(key.A) or holding_keys.get(key.LEFT):
             dude_position.x -= 500 * dt
             dude_position.x = clamp(dude_position.x, 0, window.width)
             fat_dude.update_translation(Translation("Fat Guy", dude_position))
 
-        if holding_keys.get(key.D):
+        if holding_keys.get(key.D) or holding_keys.get(key.RIGHT):
             dude_position.x += 500 * dt
             dude_position.x = clamp(dude_position.x, 0, window.width)
             fat_dude.update_translation(Translation("Fat Guy", dude_position))
